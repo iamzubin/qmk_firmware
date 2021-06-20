@@ -28,10 +28,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // #define MASTER_RIGHT
 // #define EE_HANDS
 
-#define USE_SERIAL_PD2
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
 
+// Prevent normal rollover on alphas from accidentally triggering mods.
+#define IGNORE_MOD_TAP_INTERRUPT
+
+// Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
 #define TAPPING_FORCE_HOLD
-#define TAPPING_TERM 100
+
+// Auto Shift
+#define NO_AUTO_SHIFT_ALPHA
+#define AUTO_SHIFT_TIMEOUT TAPPING_TERM
+#define AUTO_SHIFT_NO_SETUP
+
+#define ENCODERS_PAD_A { B4 }
+#define ENCODERS_PAD_B { B5 }
+
+#define USE_SERIAL_PD2
 
 #ifdef RGBLIGHT_ENABLE
     #undef RGBLED_NUM
